@@ -11,11 +11,22 @@
  * New usermods should use usermod.cpp instead.
  */
 #include "wled.h"
+#include <Badge.h>
+
+bool badgeMode = false;
 
 void setup() {
-  WLED::instance().setup();
+  if(badgeSetup()) {
+    badgeMode = true;
+  } else {
+    WLED::instance().setup();
+  }
 }
 
 void loop() {
-  WLED::instance().loop();
+  if(badgeMode) {
+    badgeLoop();
+  } else {
+    WLED::instance().loop();
+  }
 }
