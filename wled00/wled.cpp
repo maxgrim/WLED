@@ -129,7 +129,7 @@ void WLED::setup()
   EEPROM.begin(EEPSIZE);
   ledCount = EEPROM.read(229) + ((EEPROM.read(398) << 8) & 0xFF00);
   if (ledCount > MAX_LEDS || ledCount == 0)
-    ledCount = 30;
+    ledCount = LEDCOUNT;
 
 #ifdef ESP8266
   #if LEDPIN == 3
