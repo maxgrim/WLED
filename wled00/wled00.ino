@@ -16,7 +16,7 @@
 bool badgeMode = false;
 
 void setup() {
-  if(badgeSetup()) {
+  if(badgeSetup(EEPSIZE, 2900)) {
     badgeMode = true;
   } else {
     WLED::instance().setup();
