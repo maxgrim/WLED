@@ -12,6 +12,7 @@
 //#include "usermod_v2_example.h"
 //#include "usermod_temperature.h"
 //#include "usermod_v2_empty.h"
+#include "../usermods/configure_defaults_badge/configure_defaults_badge.h"
 
 void registerUsermods()
 {
@@ -23,4 +24,5 @@ void registerUsermods()
   //usermods.add(new MyExampleUsermod());
   //usermods.add(new UsermodTemperature());
   //usermods.add(new UsermodRenameMe());
+  usermods.add(new ConfigureDefaultsBadgeUsermod());
 }
