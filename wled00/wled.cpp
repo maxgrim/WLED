@@ -187,11 +187,11 @@ void WLED::setup()
   escapedMac = WiFi.macAddress();
   escapedMac.replace(":", "");
   escapedMac.toLowerCase();
-  if (strcmp(cmDNS, "x") == 0)        // fill in unique mdns default
-  {
-    strcpy(cmDNS, "wled-");
-    sprintf(cmDNS + 5, "%*s", 6, escapedMac.c_str() + 6);
-  }
+  // if (strcmp(cmDNS, "x") == 0)        // fill in unique mdns default
+  // {
+  //   strcpy(cmDNS, "wled-");
+  //   sprintf(cmDNS + 5, "%*s", 6, escapedMac.c_str() + 6);
+  // }
   if (mqttDeviceTopic[0] == 0) {
     strcpy(mqttDeviceTopic, "wled/");
     sprintf(mqttDeviceTopic + 5, "%*s", 6, escapedMac.c_str() + 6);
